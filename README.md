@@ -18,7 +18,7 @@ Start installer and install.
 
 If you want to update GreenCubic, no need to delete old version. Just start installer, it will not ask you for install path and update game.
 
-### Linux and other platforms
+### Other platforms
 
 You can use Wine to run GreenCubic_installer.exe and install the game.
 
@@ -28,7 +28,7 @@ You can use Wine to run GreenCubic_installer.exe and install the game.
 
 If you have 32-bit or old (Windows XP and older) Windows, GreenCubic will not work, you need to build it from source.
 
-1. Install [Python](python.org) if you haven't it.. (32 bit, if you have 32 bit windows, and 3.4 if you have Windows XP or older), do not forget to add to path and install pip.
+1. Install [Python](python.org) if you haven't it. (32 bit, if you have 32 bit windows, and 3.4 if you have Windows XP or older), do not forget to add to path and install pip.
 
 2. Install modules by command `pip3 install pygame pypresence pyinstaller`
 

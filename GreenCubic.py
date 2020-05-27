@@ -1,8 +1,4 @@
-﻿import pygame
-from time import time
-from pypresence import Presence
-from configparser import ConfigParser
-from json import load as JSONload
+﻿import pygame # Loading pygame
 
 # Setting up window
 pygame.init()
@@ -11,26 +7,52 @@ pygame.display.set_caption("GreenCubic")
 icon = pygame.image.load('data/icon.ico')
 pygame.display.set_icon(icon)
 
-# Drawing loading screen
+# Making loading screen
 window.fill((255,255,255))
 
 arial100 = pygame.font.Font('data/fonts/arial.ttf',100)
 arial80 = pygame.font.Font('data/fonts/arial.ttf',80)
+arial40 = pygame.font.Font('data/fonts/arial.ttf',40)
 
 GreenCubicText = arial100.render("GreenCubic",1,(0,0,0))
 loadingText = arial80.render("Loading...",1,(0,0,0))
 
 window.blit(GreenCubicText,(175,100))
-window.blit(loadingText,(300,300))
+window.blit(loadingText,(300,250))
 
 pygame.draw.rect(window,(0,255,0),(725,120,75,75))
 pygame.display.update()
 
+loadingModulesText = arial40.render("Loading modules...",1,(0,0,0))
+loadingSettingsText = arial40.render("Loading settings...",1,(0,0,0))
+settingUpDiscordRPCText = arial40.render("Setting up discord RPC...",1,(0,0,0))
+loadingVariablesText = arial40.render("Loading variables...",1,(0,0,0))
+loadingFontsText = arial40.render("Loading fonts...",1,(0,0,0))
+prerenderingTextsText = arial40.render("Prerendering texts...",1,(0,0,0))
+loadingTexturesText = arial40.render("Loading textures...",1,(0,0,0))
+loadingClassesText = arial40.render("Loading classes...",1,(0,0,0))
+
+# Loading other modules
+window.blit(loadingModulesText,(300,400))
+pygame.display.update()
+from time import time
+from pypresence import Presence
+from configparser import ConfigParser
+from json import load as JSONload
+
 # Loading settings
+pygame.draw.rect(window,(255,255,255),(100,350,700,100))
+window.blit(loadingSettingsText,(300,400))
+pygame.display.update()
+
 settings = ConfigParser()
 settings.read('settings.ini')
 
 # Setting up Rich Presence
+pygame.draw.rect(window,(255,255,255),(100,350,700,100))
+window.blit(settingUpDiscordRPCText,(300,400))
+pygame.display.update()
+
 discordConnect = settings.getboolean('DEFAULT','discordrpc')
 startTime = int(time())
 clientID = '603692122704707594'
@@ -45,6 +67,10 @@ if discordConnect:
         print("Discord not found. Rich Presence is not activated.")
 	
 # Some variables
+pygame.draw.rect(window,(255,255,255),(100,350,700,100))
+window.blit(loadingVariablesText,(300,400))
+pygame.display.update()
+
 x = settings.getint('EXPERIMENTAL','startx')
 y = settings.getint('EXPERIMENTAL','starty')
 
@@ -67,6 +93,10 @@ energy = 100
 inMenu = True
 
 # Load fonts
+pygame.draw.rect(window,(255,255,255),(100,350,700,100))
+window.blit(loadingFontsText,(300,400))
+pygame.display.update()
+
 verdana40 = pygame.font.Font('data/fonts/verdana.ttf',40)
 verdana30 = pygame.font.Font('data/fonts/verdana.ttf',30)
 verdana100 = pygame.font.Font('data/fonts/verdana.ttf',100)
@@ -76,6 +106,10 @@ with open('data/locales.json', 'r', encoding='utf-8') as f: # Loading languages
 language = settings.get('DEFAULT','language') # Getting language
 
 # Prerender text
+pygame.draw.rect(window,(255,255,255),(100,350,700,100))
+window.blit(prerenderingTextsText,(300,400))
+pygame.display.update()
+
 playText = verdana40.render(locale[language]['menuText']['play'],1,(0,0,0))
 settingsText = verdana40.render(locale[language]['menuText']['settings'],1,(0,0,0))
 exitText = verdana40.render(locale[language]['menuText']['exit'],1,(0,0,0))
@@ -107,6 +141,10 @@ foodStatus = locale[language]['discordStatus']['food']
 healthStatus = locale[language]['discordStatus']['health']
 waterStatus = locale[language]['discordStatus']['water']
 energyStatus = locale[language]['discordStatus']['energy']
+
+pygame.draw.rect(window,(255,255,255),(100,350,700,100))
+window.blit(loadingTexturesText,(300,400))
+pygame.display.update()
 
 # Loading bar icons
 print("Loading bar icons")
@@ -170,6 +208,10 @@ scenename = (
 scenenum = settings.getint('EXPERIMENTAL','startscene') # Number of current scene
 scenecount = len(scene) - 1 # Scenes count
 run = True
+
+pygame.draw.rect(window,(255,255,255),(100,350,700,100))
+window.blit(loadingClassesText,(300,400))
+pygame.display.update()
 
 # Classes
 class Bar: 
@@ -547,7 +589,16 @@ def drawWindow():
     energyBar.draw()
     pygame.draw.rect(window, (0,255,0), (x, y, width, height)) 
     pygame.display.update()
-	
+
+del loadingModulesText
+del loadingSettingsText
+del settingUpDiscordRPCText
+del loadingVariablesText
+del loadingFontsText
+del prerenderingTextsText
+del loadingTexturesText
+del loadingClassesText
+
 # General game cycle
 print("Game Started!")
 while run:

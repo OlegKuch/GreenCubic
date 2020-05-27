@@ -1,6 +1,6 @@
-﻿############ENGLISH######################################
+﻿GreenCubic 1.5.5.2
 
-GreenCubic 1.5.5
+############ENGLISH######################################
 
 Control:
 Arrows.
@@ -35,10 +35,13 @@ Changed fonts
 Added new languages and a menu of languages
 1.5.5.1:
 Removed Activity class from the code
+1.5.5.2:
+Removed pieces of clouds
+New village location texture
+Optimized game loading
+Loading screen update
 
 ###############РУССКИЙ####################################
-
-GreenCubic 1.5.5
 
 Управление:
 Стрелки.
@@ -73,3 +76,8 @@ Discord: https://discord.gg/PDeePJh
 Добавлены новые языки и меню выбора языков.
 1.5.5.1:
 Из кода удалён класс Activity
+1.5.5.2:
+Удалены кусочки облаков
+Новая текстура локации деревня
+Оптимизация загрузки игры
+Обновление экрана загрузки
