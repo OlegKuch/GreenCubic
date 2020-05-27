@@ -33,6 +33,8 @@ Added settings menu.
 1.5.5:
 Changed fonts
 Added new languages and a menu of languages
+1.5.5.1:
+Removed Activity class from the code
 
 ###############РУССКИЙ####################################
 

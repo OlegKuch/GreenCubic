@@ -1,6 +1,6 @@
 ﻿import pygame
 from time import time
-from pypresence import Presence, Activity
+from pypresence import Presence
 from configparser import ConfigParser
 from json import load as JSONload
 
