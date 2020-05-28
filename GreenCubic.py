@@ -590,6 +590,7 @@ def drawWindow():
     pygame.draw.rect(window, (0,255,0), (x, y, width, height)) 
     pygame.display.update()
 
+# Removing unused texts
 del loadingModulesText
 del loadingSettingsText
 del settingUpDiscordRPCText
