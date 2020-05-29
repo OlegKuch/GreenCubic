@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "GreenCubic"
-#define MyAppVersion "1.5.5.2"
+#define MyAppVersion "1.5.5.3"
 #define MyAppPublisher "HamsterSoft"
 #define MyAppExeName "GreenCubic.exe"
 

@@ -39,6 +39,7 @@ from time import time
 from pypresence import Presence
 from configparser import ConfigParser
 from json import load as JSONload
+from random import randint
 
 # Loading settings
 pygame.draw.rect(window,(255,255,255),(100,350,700,100))
@@ -146,8 +147,9 @@ pygame.draw.rect(window,(255,255,255),(100,350,700,100))
 window.blit(loadingTexturesText,(300,400))
 pygame.display.update()
 
+# Loading textures
+print("Loading textures")
 # Loading bar icons
-print("Loading bar icons")
 baricon = (
     pygame.image.load('data/baricons/health.png'),
     pygame.image.load('data/baricons/food.png'),
@@ -155,7 +157,6 @@ baricon = (
     pygame.image.load('data/baricons/energy.png')
 )
 # Loading scenes
-print("Loading scenes")
 scene = (
     pygame.image.load('data/backgrounds/basement.png'),
     pygame.image.load('data/backgrounds/home.png'),
@@ -169,6 +170,18 @@ scene = (
     pygame.image.load('data/backgrounds/beach.png')
 )
 stars = pygame.image.load('data/backgrounds/stars.png') # Star sky
+
+# Clouds
+cloud = (
+    pygame.image.load('data/clouds/cloud0.png'),
+    pygame.image.load('data/clouds/cloud1.png'),
+    pygame.image.load('data/clouds/cloud2.png'),
+    pygame.image.load('data/clouds/cloud3.png'),
+    pygame.image.load('data/clouds/cloud4.png'),
+    pygame.image.load('data/clouds/cloud5.png'),
+    pygame.image.load('data/clouds/cloud6.png'),
+    pygame.image.load('data/clouds/cloud7.png')
+)
 
 # Menu icons
 settingsIcon = pygame.image.load('data/menuIcons/settings.png')
@@ -213,6 +226,7 @@ pygame.draw.rect(window,(255,255,255),(100,350,700,100))
 window.blit(loadingClassesText,(300,400))
 pygame.display.update()
 
+print("Loading classes")
 # Classes
 class Bar: 
     '''Class for bars'''
@@ -456,20 +470,25 @@ class Menu:
             print("Unknown menu type! Returning to main.")
             self.menuType = "MAIN"
         pygame.display.update()
-"""
+
 class Clouds:
-    def __init__(self,cloudCount,maxCircles,minCircles,circleRadius):
-        self.cloudCount = cloudCount
-        self.maxCircles = maxCircles
-        self.minCircles = minCircles
-        self.circleRadius = circleRadius
-        self.clouds = [[{x:5,y:17},{y:6,y:20}],[{x:20,y:8},{x:26,y:12}]]
+    def __init__(self):
+        self.cloudsX = [0,0,0,0,0]
+        self.cloudForms = [0,0,0,0,0]
+        for i in range(0,4):
+            self.cloudsX[i] = randint(0,1500)
+            self.cloudForms[i] = randint(0,7)
     def tick(self):
-        pass
+        for i in range(0,4):
+            self.cloudsX[i] -= 0.5
+            if self.cloudsX[i] < -250:
+                self.cloudsX[i] = randint(1000,2000)
+                self.cloudForms[i] = randint(0,7)
     def draw(self):
-        for cloud in self.clouds:
-            for circle in cloud:
-                pygame.draw.circle(window,(255,255,255),(circle[x],circle[y]),self.circleRadius)
+        for i in range(0,4):
+            window.blit(cloud[self.cloudForms[i]],(self.cloudsX[i],50))
+
+"""
 class Cubic():
     '''Класс, отвечающий за другие кубики'''
     def __init__(self, x,y,scene, red,green,blue):
@@ -500,6 +519,7 @@ waterBar = Bar(25, 70, 0,150,220, 20, water, 3, 2)
 energyBar = Bar(25, 100, 255,255,0, 20, energy, 3, 3)
 DN = DayNight()
 menu = Menu()
+clouds = Clouds()
 
 # Functions
 def restartGame():
@@ -580,6 +600,7 @@ def drawWindow():
     '''Function for drawing everything in window'''
     if (scenenum <= scenecount and scenenum >= 0):
         DN.draw()
+        clouds.draw()
         window.blit(scene[scenenum], (0,0))
     else:
         window.fill((0,0,0))
@@ -904,7 +925,8 @@ while run:
 	
     drawWindow()
     DN.tick()
-	
+    clouds.tick()
+
 # Bye.
 print("Game Stopped!")
 RPC.close()
