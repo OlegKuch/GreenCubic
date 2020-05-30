@@ -230,7 +230,6 @@ print("Loading classes")
 # Classes
 class Bar: 
     '''Class for bars'''
-
     def __init__(self, x,y, red,green,blue, height, value, multiplier, iconnum):
         self.x = 25
         self.y = y
@@ -241,53 +240,54 @@ class Bar:
         self.value = value
         self.multiplier = multiplier
         self.iconnum = iconnum
-	
     def draw(self):
         if self.value > 0:
             pygame.draw.rect(window,(self.red,self.green,self.blue),(self.x,self.y, self.value * self.multiplier, self.height))
         window.blit(baricon[self.iconnum], (self.x - 22, self.y))
-	
     def update(self, value):
         self.value = value
 	
 class DayNight:
     '''Class for day and night'''
-
     def __init__(self):
         self.cycle = settings.getboolean('TIME','cycle')
         self.cp = settings.getint('TIME','time')
         self.raising = False
-	
+        self.sunX = 0
+        self.moonX = 0
+        self.timespeed = 0.06
     def tick(self):
         '''One time tick'''
         if self.cycle:
             if self.raising:
                 if self.cp < 255:
-                    self.cp += 0.06
+                    self.cp += self.timespeed
+                    self.sunX = int(self.cp * 4) - 510
+                    self.moonX = self.sunX + 1020
                 else:
                     self.raising = False
             else:
                 if self.cp > 0:
-                  self.cp -= 0.06
+                  self.cp -= self.timespeed
+                  self.sunX = int(1020 - self.cp * 4) + 510
+                  self.moonX = self.sunX - 1020
                 else:
-                    self.raising = True
-		
+                    self.raising = True	
     def draw(self):
         '''Drawing sky'''
         window.fill((0,self.cp / 1.5,self.cp))
         if self.cp < 50:
             window.blit(stars,(0,0))
+        pygame.draw.circle(window,(255,255,0),(self.sunX,100),75)
+        pygame.draw.circle(window,(200,200,200),(self.moonX,100),50)
 	
 class Menu:
     '''Class for menus'''
-
     def __init__(self):
         self.menuType = "MAIN"
-	
     def draw(self):
         '''Menu draw'''
         global mouseX,mouseY
-	
         if self.menuType == "MAIN": # Drawing main menu
             window.fill((0,170,255))
             window.blit(scene[1],(0,0))
@@ -315,7 +315,6 @@ class Menu:
             window.blit(exitIcon,(710,360))
             window.blit(GreenCubicText,(175,20))
             pygame.draw.rect(window,(0,255,0),(720,40,70,70))
-		
         elif self.menuType == "PAUSE": # Drawing pause menu
             DN.draw()
             window.blit(scene[scenenum],(0,0))
@@ -352,7 +351,6 @@ class Menu:
             window.blit(restartIcon,(610,235))
             window.blit(mainMenuIcon,(610,310))
             window.blit(exitIcon,(610,385))
-		
         elif self.menuType == "DIED": # "You died!" Menu
             DN.draw()
             window.blit(scene[scenenum],(0,0))
@@ -377,7 +375,6 @@ class Menu:
             window.blit(exitToMenuText,(360,255))
             pygame.draw.rect(window,(0,255,0),(710,160,30,30))
             window.blit(mainMenuIcon,(710,260))
-		
         elif self.menuType == "SETTINGS": # Settings menu
             window.fill((0,170,255))
             window.blit(scene[1],(0,0))
@@ -428,7 +425,6 @@ class Menu:
             window.blit(exitToMenuText,(40,425))
             window.blit(mainMenuIcon,(290,430))
             window.blit(languageIcon,(930,430))
-	
         elif self.menuType == "LANGUAGE": # Language choose menu
             window.fill((0,170,255))
             window.blit(scene[1],(0,0))

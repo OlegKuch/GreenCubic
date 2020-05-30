@@ -1,4 +1,4 @@
-﻿GreenCubic 1.5.5.3
+﻿GreenCubic 1.5.5.4
 
 ############ENGLISH######################################
 
@@ -41,7 +41,10 @@ New village location texture
 Optimized game loading
 Loading screen update
 1.5.5.3:
-Added clouds!
+Added clouds
+1.5.5.4:
+Added Moon and Sun
+New city location texture
 
 ###############РУССКИЙ####################################
 
@@ -84,4 +87,7 @@ Discord: https://discord.gg/PDeePJh
 Оптимизация загрузки игры
 Обновление экрана загрузки
 1.5.5.3:
-Добавлены облака!
+Добавлены облака
+1.5.5.4:
+Добавлены Солнце и Луна
+Новая текстура локации город
