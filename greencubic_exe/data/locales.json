@@ -1,0 +1,202 @@
+{
+"english":
+    {
+    "menuText":
+        {
+        "play":"Play",
+        "settings":"Settings",
+        "exit":"Exit",
+        "pause":"Pause",
+        "exitToMenu":"Exit to menu",
+        "resume":"Resume",
+        "restart":"Restart",
+        "dayNightCycle":"Day/Night cycle",
+        "dayNight":"Day/Night",
+        "language":"Language",
+        "youDied":"You died!"
+        },
+    "discordStatus":
+        {
+        "location":"Location: ",
+        "health":"H: ",
+        "food":" F: ",
+        "water":" W: ",
+        "energy":" E: ",
+        "died":"Died",
+        "mainMenu":"Main Menu",
+        "languageSettings":"Language settings",
+        "locations":
+            {
+            "basement":"Basement",
+            "home":"Home",
+            "yard":"Yard",
+            "village":"Village",
+            "garden":"Garden",
+            "field":"Field",
+            "forest":"Forest",
+            "city":"City",
+            "beach":"Beach"
+            }
+        }
+    },
+"russian":
+    {
+    "menuText":
+        {
+        "play":"Играть",
+        "settings":"Настройки",
+        "exit":"Выйти",
+        "pause":"Пауза",
+        "exitToMenu":"Выйти в меню",
+        "resume":"Продолжить",
+        "restart":"Перезапустить",
+        "dayNightCycle":"Цикл День/Ночь",
+        "dayNight":"День/Ночь",
+        "language":"Язык",
+        "youDied":"Ты умер!"
+        },
+    "discordStatus":
+        {
+        "location":"Локация: ",
+        "health":"З: ",
+        "food":" Е: ",
+        "water":" В: ",
+        "energy":" Э: ",
+        "died":"Умер",
+        "mainMenu":"Главное меню",
+        "languageSettings":"Настройки языка",
+        "locations":
+            {
+            "basement":"Подвал",
+            "home":"Дом",
+            "yard":"Двор",
+            "village":"Деревня",
+            "garden":"Огород",
+            "field":"Поле",
+            "forest":"Лес",
+            "city":"Город",
+            "beach":"Пляж"
+            }
+        }
+    },
+"ukrainian":
+    {
+    "menuText":
+        {
+        "play":"Грати",
+        "settings":"Налаштування",
+        "exit":"Вийти",
+        "pause":"Пауза",
+        "exitToMenu":"Вийти в меню",
+        "resume":"Продовжити",
+        "restart":"Перезапустити",
+        "dayNightCycle":"Цикл День/Ніч",
+        "dayNight":"День/Ніч",
+        "language":"Мова",
+        "youDied":"Ти вмер!"
+        },
+    "discordStatus":
+        {
+        "location":"Локація: ",
+        "health":"З: ",
+        "food":" Ї: ",
+        "water":" В: ",
+        "energy":" Е: ",
+        "died":"Вмер",
+        "mainMenu":"Головне меню",
+        "languageSettings":"Налаштування мови",
+        "locations":
+            {
+            "basement":"Підвал",
+            "home":"Дім",
+            "yard":"Двір",
+            "village":"Село",
+            "garden":"Город",
+            "field":"Поле",
+            "forest":"Ліс",
+            "city":"Місто",
+            "beach":"Пляж"
+            }
+        }
+    },
+"polish":
+    {
+    "menuText":
+        {
+        "play":"Grać",
+        "settings":"Ustawienia",
+        "exit":"Wyjść",
+        "pause":"Pauza",
+        "exitToMenu":"Wyjdź z menu",
+        "resume":"Kontynuuj",
+        "restart":"Na nowo",
+        "dayNightCycle":"Cykl Dzień/Noc",
+        "dayNight":"Dzień/Noc",
+        "language":"Język",
+        "youDied":"Umarłeś!"
+        },
+    "discordStatus":
+        {
+        "location":"Lokalizacja: ",
+        "health":"Z: ",
+        "food":" J: ",
+        "water":" W: ",
+        "energy":" E: ",
+        "died":"Umarł",
+        "mainMenu":"Menu główne",
+        "languageSettings":"Ustawienia językowe",
+        "locations":
+            {
+            "basement":"Piwnica",
+            "home":"Dom",
+            "yard":"Stocznia",
+            "village":"Wioska",
+            "garden":"Ogród",
+            "field":"Pole",
+            "forest":"Las",
+            "city":"Miasto",
+            "beach":"Plaża"
+            }
+        }
+    },
+"deutch":
+    {
+    "menuText":
+        {
+        "play":"Zu spielen",
+        "settings":"Einstellungen",
+        "exit":"Geh raus",
+        "pause":"Pause",
+        "exitToMenu":"Gehe zum Menü",
+        "resume":"Weiter",
+        "restart":"Neustart",
+        "dayNightCycle":"Tag/Nacht Zyklus",
+        "dayNight":"Tag/Nacht",
+        "language":"Sprache",
+        "youDied":"Du bist tot!"
+        },
+    "discordStatus":
+        {
+        "location":"Lage: ",
+        "health":"G: ",
+        "food":" E: ",
+        "water":" W: ",
+        "energy":" E: ",
+        "died":"Gestorben",
+        "mainMenu":"Hauptmenü",
+        "languageSettings":"Spracheinstellungen",
+        "locations":
+            {
+            "basement":"Keller",
+            "home":"Haus",
+            "yard":"Der Hof",
+            "village":"Das dorf",
+            "garden":"Gemüsegarten",
+            "field":"Das Feld",
+            "forest":"Der wald",
+            "city":"Die Stadt",
+            "beach":"Der strand"
+            }
+        }
+    }
+}

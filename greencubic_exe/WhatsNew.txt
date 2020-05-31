@@ -1,0 +1,93 @@
+﻿GreenCubic 1.5.5.4
+
+############ENGLISH######################################
+
+Control:
+Arrows.
+LEFT, RIGHT - movement left, right.
+UP - jump or move up on ladder.
+DOWN - go down from the object or the ladder (to enter the basement, you must stay on trapdoor and press DOWN)
+LSHIFT - running.
+D - drink
+E - eat
+ESC - pause
+
+The authors:
+Kucheryavenko O.S. - General Developer, Programmer, Game Designer, Artist
+Gavrilov D.A. - Game Designer, Sound Director, Artist
+
+Contacts:
+VK: https://vk.com/greencubic
+Discord: https://discord.gg/PDeePJh
+
+1.5.1:
+Added day and night replacing each other.
+1.5.2:
+Added menu (Settings temporarily do not work, to exit the menu you need to press ESC).
+Added loading screen.
+1.5.3:
+Added pause menu.
+Added menu "You died!"
+1.5.4:
+Added settings menu.
+1.5.5:
+Changed fonts
+Added new languages and a menu of languages
+1.5.5.1:
+Removed Activity class from the code
+1.5.5.2:
+Removed pieces of clouds
+New village location texture
+Optimized game loading
+Loading screen update
+1.5.5.3:
+Added clouds
+1.5.5.4:
+Added Moon and Sun
+New city location texture
+
+###############РУССКИЙ####################################
+
+Управление:
+Стрелки.
+LEFT, RIGHT - движение влево, вправо.
+UP - прыгать или подниматься по лестнице.
+DOWN - спуститься с объекта или с лестницы (чтобы войти в подвал, нужно стать на люк и нажать DOWN)
+LSHIFT - ускорение.
+D - пить
+Е - есть
+ESC - пауза
+
+Авторы:
+Кучерявенко О.С. - Главный разработчик, Программист, Геймдизайнер, Художник
+Гаврилов Д.А. - Геймдизайнер, Звукорежиссер, Художник
+
+Контакты:
+ВК: https://vk.com/greencubic
+Discord: https://discord.gg/PDeePJh
+
+1.5.1:
+Добавлены день и ночь сменяющие друг друга.
+1.5.2:
+Добавлено меню (Настройки временно не работают, чтоб выйти в меню нужно нажать ESC).
+Добавлен экран загрузки.
+1.5.3:
+Добавлено меню паузы
+Добавлено меню "Ты умер!"
+1.5.4:
+Добавлено меню настроек.
+1.5.5:
+Изменены шрифты.
+Добавлены новые языки и меню выбора языков.
+1.5.5.1:
+Из кода удалён класс Activity
+1.5.5.2:
+Удалены кусочки облаков
+Новая текстура локации деревня
+Оптимизация загрузки игры
+Обновление экрана загрузки
+1.5.5.3:
+Добавлены облака
+1.5.5.4:
+Добавлены Солнце и Луна
+Новая текстура локации город

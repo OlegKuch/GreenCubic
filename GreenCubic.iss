@@ -17,7 +17,7 @@ AppPublisher={#MyAppPublisher}
 DefaultDirName=C:\Games\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=D:\Projects\Python\GreenCubic\LICENSE
-InfoBeforeFile=D:\Projects\Python\GreenCubic\greencubic\WhatsNew.txt
+InfoBeforeFile=D:\Projects\Python\GreenCubic\greencubic_exe\WhatsNew.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=D:\Projects\Python\GreenCubic
@@ -35,8 +35,8 @@ Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\Projects\Python\GreenCubic\greencubic\GreenCubic.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:Projects\Python\GreenCubic\greencubic\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Projects\Python\GreenCubic\greencubic_exe\GreenCubic.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:Projects\Python\GreenCubic\greencubic_exe\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
