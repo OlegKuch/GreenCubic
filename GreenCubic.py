@@ -249,13 +249,14 @@ class Bar:
 	
 class DayNight:
     '''Class for day and night'''
-    def __init__(self):
+    def __init__(self, timespeed = 0.05):
         self.cycle = settings.getboolean('TIME','cycle')
         self.cp = settings.getint('TIME','time')
         self.raising = False
         self.sunX = 0
         self.moonX = 0
-        self.timespeed = 0.06
+        self.timespeed = timespeed
+        self.moonPhase = 0
     def tick(self):
         '''One time tick'''
         if self.cycle:
@@ -266,6 +267,10 @@ class DayNight:
                     self.moonX = self.sunX + 1020
                 else:
                     self.raising = False
+                    if self.moonPhase < 7:
+                        self.moonPhase += 1
+                    else:
+                        self.moonPhase = 0
             else:
                 if self.cp > 0:
                   self.cp -= self.timespeed
@@ -278,8 +283,22 @@ class DayNight:
         window.fill((0,self.cp / 1.5,self.cp))
         if self.cp < 50:
             window.blit(stars,(0,0))
-        pygame.draw.circle(window,(255,255,0),(self.sunX,100),75)
-        pygame.draw.circle(window,(200,200,200),(self.moonX,100),50)
+        pygame.draw.circle(window,(255,255,0),(self.sunX,100),75) # Drawing sun
+        pygame.draw.circle(window,(200,200,200),(self.moonX,100),50) # Drawing moon
+        if self.moonPhase == 0: # Moon phases
+            pygame.draw.circle(window,(0,self.cp / 1.5,self.cp),(self.moonX,100),49)
+        if self.moonPhase == 1:
+            pygame.draw.circle(window,(0,self.cp / 1.5,self.cp),(self.moonX - 25,100),50)
+        if self.moonPhase == 2:
+            pygame.draw.circle(window,(0,self.cp / 1.5,self.cp),(self.moonX - 50,100),50)
+        if self.moonPhase == 3:
+            pygame.draw.circle(window,(0,self.cp / 1.5,self.cp),(self.moonX - 75,100),50)
+        if self.moonPhase == 5:
+            pygame.draw.circle(window,(0,self.cp / 1.5,self.cp),(self.moonX + 75,100),50)
+        if self.moonPhase == 6:
+            pygame.draw.circle(window,(0,self.cp / 1.5,self.cp),(self.moonX + 50,100),50)
+        if self.moonPhase == 7:
+            pygame.draw.circle(window,(0,self.cp / 1.5,self.cp),(self.moonX + 25,100),50)
 	
 class Menu:
     '''Class for menus'''
@@ -468,19 +487,23 @@ class Menu:
         pygame.display.update()
 
 class Clouds:
+    '''Class for clouds'''
     def __init__(self):
-        self.cloudsX = [0,0,0,0,0]
-        self.cloudForms = [0,0,0,0,0]
-        for i in range(0,4):
+        self.quantity = 5
+        self.cloudsX = [0] * self.quantity
+        self.cloudForms = [0] * self.quantity
+        for i in range(0,self.quantity - 1):
             self.cloudsX[i] = randint(0,1500)
             self.cloudForms[i] = randint(0,7)
     def tick(self):
-        for i in range(0,4):
+        '''Moving the clouds, generating new clouds and removing old.'''
+        for i in range(0,self.quantity - 1):
             self.cloudsX[i] -= 0.5
             if self.cloudsX[i] < -250:
                 self.cloudsX[i] = randint(1000,2000)
                 self.cloudForms[i] = randint(0,7)
     def draw(self):
+        '''Drawing clouds'''
         for i in range(0,4):
             window.blit(cloud[self.cloudForms[i]],(self.cloudsX[i],50))
 
