@@ -183,6 +183,8 @@ cloud = (
     pygame.image.load('data/clouds/cloud7.png')
 )
 
+moon = pygame.image.load('data/moon.png')
+
 # Menu icons
 settingsIcon = pygame.image.load('data/menuIcons/settings.png')
 exitIcon = pygame.image.load('data/menuIcons/exit.png')
@@ -256,7 +258,7 @@ class DayNight:
         self.sunX = 0
         self.moonX = 0
         self.timespeed = timespeed
-        self.moonPhase = 0
+        self.moonPhase = 1
     def tick(self):
         '''One time tick'''
         if self.cycle:
@@ -284,7 +286,7 @@ class DayNight:
         if self.cp < 50:
             window.blit(stars,(0,0))
         pygame.draw.circle(window,(255,255,0),(self.sunX,100),75) # Drawing sun
-        pygame.draw.circle(window,(200,200,200),(self.moonX,100),50) # Drawing moon
+        window.blit(moon,(self.moonX - 50,50)) # Drawing moon
         if self.moonPhase == 0: # Moon phases
             pygame.draw.circle(window,(0,self.cp / 1.5,self.cp),(self.moonX,100),49)
         if self.moonPhase == 1:
